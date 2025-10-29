@@ -17,7 +17,7 @@ export default function TabLayout() {
           paddingTop: 8,
         },
         tabBarLabelStyle: {
-          fontSize: 12,
+          fontSize: 11,
           fontWeight: '600',
         },
       }}
@@ -30,9 +30,30 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
+        name="insights"
+        options={{
+          title: 'Insights',
+          tabBarIcon: ({ color, size }) => <Ionicons name="analytics" size={size} color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="bodymap"
+        options={{
+          title: 'Body Map',
+          tabBarIcon: ({ color, size }) => <Ionicons name="body" size={size} color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="challenges"
+        options={{
+          title: 'Challenges',
+          tabBarIcon: ({ color, size }) => <Ionicons name="trophy" size={size} color={color} />,
+        }}
+      />
+      <Tabs.Screen
         name="chat"
         options={{
-          title: 'Health AI',
+          title: 'AI Chat',
           tabBarIcon: ({ color, size }) => <Ionicons name="chatbubbles" size={size} color={color} />,
         }}
       />
