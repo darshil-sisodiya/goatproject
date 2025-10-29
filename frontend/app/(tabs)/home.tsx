@@ -182,6 +182,24 @@ export default function Home() {
         <Text style={styles.headerTitle}>Health Timeline</Text>
       </View>
 
+      {insights && insights.symptoms_this_month > 5 && (
+        <View style={styles.insightBanner}>
+          <Ionicons name="warning" size={20} color="#F59E0B" />
+          <Text style={styles.insightText}>
+            Headaches increasing lately - try hydrating more!
+          </Text>
+        </View>
+      )}
+
+      {insights && insights.stress_free_days >= 5 && (
+        <View style={[styles.insightBanner, { backgroundColor: '#10B98120', borderColor: '#10B981' }]}>
+          <Ionicons name="trophy" size={20} color="#10B981" />
+          <Text style={[styles.insightText, { color: '#10B981' }]}>
+            Amazing! {insights.stress_free_days}-day stress-free streak! 🎉
+          </Text>
+        </View>
+      )}
+
       <FlatList
         data={entries}
         renderItem={renderEntry}
